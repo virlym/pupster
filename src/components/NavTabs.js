@@ -1,27 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function NavTabs(props) {
+  console.log(props);
   return (
     <ul className="nav nav-tabs">
+      <Link to="/about" class="navbar-brand" >
+        Pupster
+      </Link>
       <li className="nav-item">
-        <a href="#home" onClick={() => props.handlePageChange("Home")} className={props.currentPage === "Home" ? "nav-link active" : "nav-link"}>
-          Home
-        </a>
-      </li>
-      <li className="nav-item">
-        <a href="#about" onClick={() => props.handlePageChange("About")} className={props.currentPage === "About" ? "nav-link active" : "nav-link"}>
+        <Link to="/about" className={props.currentPage === "about" ? "nav-link active" : "nav-link"}>
           About
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a href="#blog" onClick={() => props.handlePageChange("Blog")} className={props.currentPage === "Blog" ? "nav-link active" : "nav-link"}>
-          Blog
-        </a>
+        <Link to="/discover" className={props.currentPage === "discover" ? "nav-link active" : "nav-link"}>
+          Discover
+        </Link>
       </li>
       <li className="nav-item">
-        <a href="#contact" onClick={() => props.handlePageChange("Contact")} className={props.currentPage === "Contact" ? "nav-link active" : "nav-link"}>
-          Contact
-        </a>
+        <Link to="/search" className={props.currentPage === "search" ? "nav-link active" : "nav-link"}>
+          Search
+        </Link>
       </li>
     </ul>
   );
