@@ -1,7 +1,7 @@
 import axios from "axios";
 const BASEURL = "https://dog.ceo/api/breed/";
 const BREED = "/images";
-const ALL = "https://dog.ceo/api/breeds/list/all";
+const ALL = "https://dog.ceo/api/breeds/list";
 const RANDOM = "https://dog.ceo/api/breeds/image/random";
 
 export default {
@@ -33,7 +33,7 @@ export default {
                 "status": "success"
             }
         */
-        return (axios.get(BASEURL + query + BREED));
+        return (axios.get(`${BASEURL}${query}${BREED}`));
       }
       else{
         /*
